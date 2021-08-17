@@ -1,0 +1,27 @@
+"
+"   _  _ ___    
+"  | || | __|   Hossein Esmailzadeh
+"  | __ | _|    Email:  hosaidenpwr@protonmail.com
+"  |_||_|___|   Matrix: hosaidenpwd:matrix.org
+"               
+"                                   "
+" main section                      "
+" "
+source ~/.vim/main.vim
+"
+" colorscheme                       "
+" "
+"                                    
+" codedark xcodedarkhc 256_noir     " list of good colorschemes
+" minimalist simple-dark            " -
+"                                   "  
+colorscheme 256_noir                " active colorscheme
+"                                      
+""" skel templates
+"" add ready-to-use text by .ext
+source ~/.vim/skels.vim             " 
+"                                     
+"" status line section
+" "
+source ~/.vim/statusline.vim
+"

@@ -1,0 +1,67 @@
+"
+"   _  _ ___    
+"  | || | __|   Hossein Esmailzadeh
+"  | __ | _|    Email:  hosaidenpwr@protonmail.com
+"  |_||_|___|   Matrix: hosaidenpwd:matrix.org
+"               
+"                                     "
+" main section                        "
+" "
+source ~/.vim/main.vim
+"
+" colorscheme                         "
+" "
+"set termguicolors                    " let vim use color in GUI mode
+"                                      
+" codedark one phoenix ayu github     " list of good colorschemes
+" xcodedarkhc molokai xcodedark       " --
+" ghdark dalton minimalist            " --
+"                                      
+colorscheme ghdark                     " active colorscheme
+"                                      
+
+""" skel templates
+"" add ready-to-use text by .ext
+source ~/.vim/skels.vim
+"                                     
+"" status line section
+" "
+" to display current mode in status line
+let g:currentmode={                
+       \ 'n'  : '',
+       \ 'v'  : 'V',
+       \ 'V'  : 'V·L',
+       \ "\<C-V>" : 'V·B',
+       \ 'i'  : 'I',
+       \ 'R'  : 'R',
+       \ 'Rv' : 'V·R',
+       \ 'c'  : 'CMD',
+       \}
+"
+"" config section
+set laststatus=2                      " show status line
+set statusline=                       " status line config
+set statusline+=%#WildMenu#           " color-scheme
+set statusline+=\                     " blank space
+set statusline+=[%{toupper(g:currentmode[mode()])}]        " show current mode
+set statusline+=\ \-\>                " blank space
+set statusline+=\ \                   " blank space
+set statusline+=%f                    " Full path
+set statusline+=\                     " blank space
+set statusline+=%=                    " Switch to the right side
+set statusline+=\                     " blank space
+set statusline+=%r                    " read-only file symbol
+set statusline+=\                     " blank space
+set statusline+=%c                    " cursor current position
+set statusline+=\ \                   " blank space
+set statusline+=%l\,%L                " current line:cursor position
+set statusline+=\ \ \                 " blank space
+set statusline+=%Y                    " file type
+set statusline+=\ \ \                 " blank space
+set statusline+=%{strftime('%H:%M')}  " show time 
+set statusline+=\ \                   " blank space
+set statusline+=\[%M\]                " modification symbol
+set statusline+=\ \                   " blank space
+"
+"
+"
