@@ -1,2 +1,2 @@
 # vim
-vim configuration
+vim without any plugins
