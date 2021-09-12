@@ -15,7 +15,7 @@ source ~/.vim/main.vim
 " atom-dark-256 PaperColor nord     " -
 " }}}                               "  
 
-colorscheme 256_noir                " active colorscheme
+colorscheme minimalist
 "                                      
 "" add ready-to-use text by .ext
 source ~/.vim/skels.vim
