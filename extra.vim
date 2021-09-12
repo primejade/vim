@@ -18,7 +18,7 @@ inoremap      {  {}<Left>
 "
 call plug#begin('~/.config/nvim/vimplug')
 
-    Plug 'vim-scripts/AutoComplPop'       " auto completion plugin
+"    Plug 'vim-scripts/AutoComplPop'       " auto completion plugin
 "    Plug 'ap/vim-css-color'               " Color previews for CSS
 "    Plug 'vim-airline/vim-airline'
 "    Plug 'vim-airline/vim-airline-themes'
@@ -27,6 +27,7 @@ call plug#begin('~/.config/nvim/vimplug')
 "    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 "    Plug 'honza/vim-snippets'
+    Plug 'tribela/vim-transparent'
 
 call plug#end()
 "
@@ -37,7 +38,6 @@ call plug#end()
 "
 "  Plug 'vim-scripts/AutoComplPop'       " auto completion plugin
 "" Plug 'itchyny/lightline.vim'          " Lightline statusbar
-"  Plug 'tribela/vim-transparent'
 "" Plug 'ap/vim-css-color'               " Color previews for CSS
 "
 "call plug#end()

@@ -1,7 +1,7 @@
 "  _  _ ___                                      
-" | || | __|   Hossein Esmailzadeh               
-" | __ | _|    Email:  hosaidenpwr@protonmail.com
-" |_||_|___|   Matrix: hosaidenpwd:matrix.org    
+" | || | __|   H
+" | __ | _|    A
+" |_||_|___|   P
 "                                                
 "                                  "             
 "" status line drafts -used to be functions- {{{
@@ -162,11 +162,11 @@ set statusline+=\                                          " blank space
 "hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
 
 " " light-blue-black
-hi User1 cterm=bold ctermfg=232 ctermbg=14  gui=bold guifg=#000000 guibg=#4fb8cc
-hi User2 cterm=bold ctermfg=14  ctermbg=232 gui=bold guifg=#4fb8cc guibg=#121212
-hi User3 cterm=bold ctermfg=243 ctermbg=232 gui=bold guifg=#767676 guibg=#121212
-hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
-hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
+"hi User1 cterm=bold ctermfg=232 ctermbg=14  gui=bold guifg=#000000 guibg=#4fb8cc
+"hi User2 cterm=bold ctermfg=14  ctermbg=232 gui=bold guifg=#4fb8cc guibg=#121212
+"hi User3 cterm=bold ctermfg=243 ctermbg=232 gui=bold guifg=#767676 guibg=#121212
+"hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
+"hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
 
 " " orange-black
 "hi User1 cterm=bold ctermfg=232 ctermbg=208 gui=bold guifg=#000000 guibg=#ff8700
@@ -183,11 +183,11 @@ hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
 "hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
 
 " " yellow-black
-"hi User1 cterm=bold ctermfg=232 ctermbg=226 gui=bold guifg=#000000 guibg=#ffff00
-"hi User2 cterm=bold ctermfg=226 ctermbg=232 gui=bold guifg=#ffff00 guibg=#121212
-"hi User3 cterm=bold ctermfg=243 ctermbg=232 gui=bold guifg=#767676 guibg=#121212
-"hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
-"hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
+hi User1 cterm=bold ctermfg=232 ctermbg=226 gui=bold guifg=#000000 guibg=#ffff00
+hi User2 cterm=bold ctermfg=226 ctermbg=232 gui=bold guifg=#ffff00 guibg=#121212
+hi User3 cterm=bold ctermfg=243 ctermbg=232 gui=bold guifg=#767676 guibg=#121212
+hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
+hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
 
 " " Black and White
 "hi User1 cterm=bold ctermfg=232 ctermbg=255 gui=bold guifg=#000000 guibg=#eeeeee
