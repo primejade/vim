@@ -15,7 +15,7 @@
 % section formatting{{{
 \titleformat{\part}{\Huge\scshape\filcenter}{}{1em}{}
 
-\titleformat{\section} {\Huge \bfseries}{}{0em}{}[{\titlerule[2pt]}]
+\titleformat{\section} {\huge \bfseries}{}{0em}{}%[{\titlerule[2pt]}]
 \titlespacing{\section}{0pt}{3pt}{7pt}
 
 \titleformat{\subsection} {\Large \bfseries}{}{0em}{}
@@ -29,14 +29,17 @@
 \settextfont{XB Yas}
 \ExplSyntaxOn \cs_set_eq:NN \etex_iffontchar:D \tex_iffontchar:D \ExplSyntaxOff
 \setdigitfont{XB Yas}
+
+\defpersianfont\titr{XB Titre}
+\defpersianfont\nast{IranNastaliq}
 %}}}
 
-\title{َنوان}
-\author{نویسنده}
-\date{\today}
+%\title{عنوان}
+%\author{نویسنده}
+%\date{\today}
 
 \begin{document}
-\maketitle
+%\maketitle
 
 \section{نمونه عنوان}
 

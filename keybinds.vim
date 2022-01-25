@@ -1,11 +1,11 @@
-"  _  _ ___    
+"  _  _ ___
 " | || | __|   H
 " | __ | _|    A
 " |_||_|___|   P
-"              
+"
 "
 "" <Leader> key section
-let mapleader='\'         " change the <Leader> Key
+let mapleader='\'      " change the <Leader> Key
 "
 "" comment lines via - and uncomment via + 
 noremap <silent> - :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
@@ -18,10 +18,10 @@ noremap <silent> _ :tabprevious<CR>
 nmap <C-P> :set paste!<CR>
 "
 "" netrw toggle
-map <Leader>ff  :20Lexplore<CR><C-w>w
+nmap <Leader>ff  :24Lexplore<CR><C-w>w
 "
 "" toggle ltr support
-nmap <leader>rl   :set termbidi!<CR>
+nmap <leader>bd   :set termbidi!<CR>
 "
 "" move into pane
 nmap <C-h>  <C-w>h
@@ -30,14 +30,16 @@ nmap <C-k>  <C-w>k
 nmap <C-l>  <C-w>l
 "
 "" spelling check
-map <leader>se  :setlocal spell! spelllang=en_us<CR>
+map <leader>ss  :setlocal spell!<CR>
+map <leader>se  :set spelllang=en_us<CR>
 map <leader>sf  :set spelllang=fr<CR>
+map <leader>sd  :set spelllang=da<CR>
 "
 "" force save exit multi panes
-map <Leader>zz    :xa!<CR>
+"map <Leader>zz    :xa!<CR>
 "
 "" force exit multi panes and don't save
-map <Leader>zq    :qa!<CR>
+"map <Leader>zq    :qa!<CR>
 "
 "" split long single line apart
 map Q gqq
@@ -45,3 +47,13 @@ map Q gqq
 "" use control-c instead of escape
 nmap <C-c> <Esc>
 "
+"" force write to file
+cmap W w!
+"
+"" saving read-only files using sudo tee
+cmap WW w !doas tee % > /dev/null
+
+"" Completion:
+" Spell:
+imap <C-z> <C-x><C-s>
+

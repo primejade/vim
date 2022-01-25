@@ -3,43 +3,43 @@
 " | __ | _|    A
 " |_||_|___|   P
 "                                                
-"                                  "             
-"" status line drafts -used to be functions- {{{
-" git status function
+"                                  "             {{{
+""" status line drafts -used to be functions- {{{
+"" git status function
+""
+""function! GitBranch()
+""   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+""endfunction
+""function! StatuslineGit()
+""   let l:branchname = GitBranch()
+""   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+""endfunction 
+""
+""function! CharCount()
+""   return system("wc -m $ 2>/dev/null")
+""endfunction
+""function! PrintOutCount()
+""   let l:CharOutCount = CharCount()
+""   return strlen(l:CharOutCount) > 0?'  '.l:CharOutCount.' ':''
+""endfunction 
+""
+""function! CharCount()
+""  return system("wc -m % 2> /dev/null | awk '{print $1}' ")
+""endfunction
+""function! ShowCount()
+""  let l:countcharacters = CharCount()
+""  return strlen(l:countcharacters) > 0?'  '.l:countcharacters.' ':''
+""endfunction
+""
+"" status bar colors
+""au InsertEnter * hi statusline guifg=black guibg=#dddddd ctermfg=black ctermbg=magenta
+""au InsertLeave * hi statusline guifg=#050505  guibg=#aaaaaa ctermfg=black ctermbg=cyan
+""hi statusline                  guifg=#050505  guibg=#aaaaaa ctermfg=black ctermbg=cyan
 "
-"function! GitBranch()
-"   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-"endfunction
-"function! StatuslineGit()
-"   let l:branchname = GitBranch()
-"   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-"endfunction 
 "
-"function! CharCount()
-"   return system("wc -m $ 2>/dev/null")
-"endfunction
-"function! PrintOutCount()
-"   let l:CharOutCount = CharCount()
-"   return strlen(l:CharOutCount) > 0?'  '.l:CharOutCount.' ':''
-"endfunction 
-"
-"function! CharCount()
-"  return system("wc -m % 2> /dev/null | awk '{print $1}' ")
-"endfunction
-"function! ShowCount()
-"  let l:countcharacters = CharCount()
-"  return strlen(l:countcharacters) > 0?'  '.l:countcharacters.' ':''
-"endfunction
-"
-" status bar colors
-"au InsertEnter * hi statusline guifg=black guibg=#dddddd ctermfg=black ctermbg=magenta
-"au InsertLeave * hi statusline guifg=#050505  guibg=#aaaaaa ctermfg=black ctermbg=cyan
-"hi statusline                  guifg=#050505  guibg=#aaaaaa ctermfg=black ctermbg=cyan
-
-
-" Status line
-" default: set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)}}}
-" git function {{{
+"" Status line
+"" default: set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)}}}
+"" git function {{{
 function! StatuslineGitBranch()
     if exists("g:git_branch")
         return g:git_branch
@@ -55,7 +55,7 @@ function! GetGitBranch()
 endfunction
 
 autocmd BufEnter * call GetGitBranch()
-" }}}
+"" }}}
 "" Show current vim mode{{{
 let g:currentmode={
     \ 'n'  : 'Normal',
@@ -80,30 +80,6 @@ let g:currentmode={
     \}
 
 "}}}
-"
-""" config section{{{
-set laststatus=2                                           " show status line
-set statusline=                                            " status line config
-set statusline+=%#StatusLine#                              " color-scheme
-set statusline+=%1*\ %{toupper(g:currentmode[mode()])}\    " The current mode
-set statusline+=\»\                                        " blank space
-set statusline+=%3*\ \(                                    " blank space
-set statusline+=%{StatuslineGitBranch()}                   " git brunch in current directory
-"set statusline+=%{StatuslineGit()}                   " git brunch in current directory
-set statusline+=%3*\)                                      " blank space
-set statusline+=%5*\ %<%F                                  " Full path
-set statusline+=%3*\ %r                                    " blank space
-set statusline+=%=                                         " Switch to the right side
-set statusline+=\ %c                                       " cursor current position
-set statusline+=%4*\ \|\                                   " blank space
-set statusline+=%3*%l\:%L\                                 " blank space
-set statusline+=%4*\|                                      " blank space
-set statusline+=%3*\ \-%Y\-\                               " file type
-set statusline+=%1*\ \«                                    " blank space
-set statusline+=\                                          " blank space
-set statusline+=%n\ \[%M\]                                 " modification symbol
-set statusline+=\                                          " blank space
-""}}}
 "
 """ statusline with more things {{{
 "set laststatus=2                                         " show status line
@@ -130,7 +106,31 @@ set statusline+=\                                          " blank space
 "set statusline+=\ %{strftime('%H:%M')}\                  " show time 
 ""
 "" }}}
-
+"
+""" config section {{{
+"set laststatus=2                                           " show status line
+"set statusline=                                            " status line config
+"set statusline+=%#StatusLine#                              " color-scheme
+"set statusline+=%4*\ %{toupper(g:currentmode[mode()])}\    " The current mode
+"set statusline+=\»\                                        " blank space
+""set statusline+=%3*\ \(                                    " blank space
+""set statusline+=%{StatuslineGitBranch()}                   " git brunch in current directory
+""set statusline+=%{StatuslineGit()}                         " git brunch in current directory
+""set statusline+=%3*\)                                      " blank space
+"set statusline+=%2*\ %<%F\                                 " Full path
+"set statusline+=%5*\ %m                                    " blank space
+"set statusline+=%5*\ %r                                    " blank space
+"set statusline+=%=                                         " Switch to the right side
+"set statusline+=%3*\ %c                                    " cursor current position
+"set statusline+=%3*\ \|\                                   " blank space
+"set statusline+=%3*%l\/%L\                                 " blank space
+"set statusline+=%3*\|                                      " blank space
+"set statusline+=%3*\ \-%Y\-\                               " file type
+"set statusline+=%1*\ \«                                    " blank space
+"set statusline+=\                                          " blank space
+"set statusline+=\(%{StatuslineGitBranch()}\)               " git brunch in current directory
+"set statusline+=\                                          " blank space
+""" }}}
 "" statusline colors{{{
 ""
 " " pink-black
@@ -144,20 +144,6 @@ set statusline+=\                                          " blank space
 "hi User1 cterm=bold ctermfg=232 ctermbg=71  gui=bold guifg=#000000 guibg=#499c54
 "hi User2 cterm=bold ctermfg=71  ctermbg=232 gui=bold guifg=#499c54 guibg=#121212
 "hi User3 cterm=bold ctermfg=103 ctermbg=232 gui=bold guifg=#6897bb guibg=#121212
-"hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
-"hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
-
-" " light-green-black
-"hi User1 cterm=bold ctermfg=232 ctermbg=119 gui=bold guifg=#000000 guibg=#87ff5f
-"hi User2 cterm=bold ctermfg=119 ctermbg=232 gui=bold guifg=#87ff5f guibg=#121212
-"hi User3 cterm=bold ctermfg=243 ctermbg=232 gui=bold guifg=#767676 guibg=#121212
-"hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
-"hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
-
-" " medium-blue-black
-"hi User1 cterm=bold ctermfg=232 ctermbg=4   gui=bold guifg=#000000 guibg=#007acc
-"hi User2 cterm=bold ctermfg=4   ctermbg=232 gui=bold guifg=#007acc guibg=#121212
-"hi User3 cterm=bold ctermfg=243 ctermbg=232 gui=bold guifg=#767676 guibg=#121212
 "hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
 "hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
 
@@ -183,11 +169,11 @@ set statusline+=\                                          " blank space
 "hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
 
 " " yellow-black
-hi User1 cterm=bold ctermfg=232 ctermbg=226 gui=bold guifg=#000000 guibg=#ffff00
-hi User2 cterm=bold ctermfg=226 ctermbg=232 gui=bold guifg=#ffff00 guibg=#121212
-hi User3 cterm=bold ctermfg=243 ctermbg=232 gui=bold guifg=#767676 guibg=#121212
-hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
-hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
+"hi User1 cterm=bold ctermfg=232 ctermbg=226 gui=bold guifg=#000000 guibg=#ffff00
+"hi User2 cterm=bold ctermfg=226 ctermbg=232 gui=bold guifg=#ffff00 guibg=#121212
+"hi User3 cterm=bold ctermfg=243 ctermbg=232 gui=bold guifg=#767676 guibg=#121212
+"hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
+"hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
 
 " " Black and White
 "hi User1 cterm=bold ctermfg=232 ctermbg=255 gui=bold guifg=#000000 guibg=#eeeeee
@@ -205,9 +191,77 @@ hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
 "
 "}}}
 "
-" " very costumized colorscheme
+"" very costumized colorscheme {{{
 "hi User1 cterm=bold ctermfg=232 ctermbg=168 gui=bold guifg=#000000 guibg=#d75f87
-"hi User2 cterm=bold ctermfg=119 ctermbg=233 gui=bold guifg=#87ff5f guibg=#080808
-"hi User3 cterm=bold ctermfg=226 ctermbg=233 gui=bold guifg=#ffff00 guibg=#080808
-"hi User4 cterm=bold ctermfg=235 ctermbg=233 gui=bold guifg=#080808 guibg=#080808
-"hi User5 ctermfg=208 ctermbg=233 guifg=#ff8700 guibg=#080808
+"hi User2 cterm=bold ctermfg=015 ctermbg=234 gui=bold guifg=#fdfdfd guibg=#080808
+"hi User3 ctermfg=168 ctermbg=234 guifg=#d75f87 guibg=#080808
+"hi User4 ctermfg=015 ctermbg=234 guifg=#fdfdfd guibg=#080808
+"" }}}
+"{{{
+""hi User1 cterm=bold ctermfg=232 ctermbg=208 gui=bold guifg=#000000 guibg=#ff8700
+""hi User1 cterm=bold ctermfg=232 ctermbg=226 gui=bold guifg=#000000 guibg=#ffff00
+"hi User1 cterm=bold ctermfg=232 ctermbg=4   gui=bold guifg=#000000 guibg=#007acc
+"hi User2 cterm=bold ctermfg=015 ctermbg=233 gui=bold guifg=#fdfdfd guibg=#080808
+"hi User3 ctermfg=4 ctermbg=233 guifg=#4fb8cc guibg=#121212
+""hi User3 ctermfg=208 ctermbg=233 guifg=#ff8700 guibg=#121212
+""hi User3 ctermfg=226 ctermbg=236 guifg=#ffff00 guibg=#080808
+"hi User4 ctermfg=015 ctermbg=233 guifg=#fdfdfd guibg=#080808
+"hi User5 ctermfg=015 ctermbg=233 guifg=#fdfdfd guibg=#080808
+"}}}
+" " medium-blue-black{{{
+"hi User1 cterm=bold ctermfg=232 ctermbg=4   gui=bold guifg=#000000 guibg=#007acc
+"hi User2 ctermfg=4   ctermbg=232 guifg=#007acc guibg=#121212
+"hi User3 cterm=bold ctermfg=243 ctermbg=232 gui=bold guifg=#767676 guibg=#121212
+"hi User4 cterm=bold ctermfg=235 ctermbg=232 gui=bold guifg=#262626 guibg=#121212
+"hi User5 cterm=bold ctermfg=015 ctermbg=232 gui=bold guifg=#f1f1f1 guibg=#121212
+"
+"hi User1 ctermfg=232 ctermbg=208 guifg=#000000 guibg=#ff8700 "cterm=bold gui=bold
+"hi User4 ctermfg=208 ctermbg=232 guifg=#ff8700 guibg=#000000 "cterm=bold gui=bold
+"hi User1 ctermbg=015 ctermfg=232 guibg=#f1f1f1 guifg=#121212 "cterm=bold gui=bold
+"hi User4 ctermfg=015 ctermbg=232 guifg=#f1f1f1 guibg=#121212 "cterm=bold gui=bold
+"hi User1 ctermfg=232 ctermbg=119 guifg=#000000 guibg=#87ff5f "cterm=bold gui=bold
+"hi User4 ctermfg=119 ctermbg=232 guifg=#87ff5f guibg=#000000 "cterm=bold gui=bold
+"hi User1 ctermfg=232 ctermbg=168 guifg=#000000 guibg=#d75f87 "cterm=bold gui=bold
+"hi User4 ctermfg=168 ctermbg=232 guifg=#d75f87 guibg=#000000 "cterm=bold gui=bold
+"hi User1 ctermfg=232 ctermbg=167 guifg=#000000 guibg=#fb4943 "cterm=bold gui=bold
+"hi User4 ctermfg=167 ctermbg=232 guifg=#fb4943 guibg=#000000 "cterm=bold gui=bold
+"}}}
+" "}}}
+"" used one {{{
+"hi User1 ctermfg=232 ctermbg=4   guifg=#000000 guibg=#007acc cterm=bold gui=bold
+"hi User4 ctermfg=4   ctermbg=232 guifg=#007acc guibg=#000000 cterm=bold gui=bold
+"hi User3 ctermfg=167 ctermbg=232 guifg=#fb4943 guibg=#000000 "cterm=bold gui=bold
+"hi User2 ctermfg=243 ctermbg=232 guifg=#989898 guibg=#000000 "cterm=bold gui=bold
+"hi User5 ctermfg=015 ctermbg=232 guifg=#f1f1f1 guibg=#000000 "cterm=bold gui=bold
+"" }}}
+"
+"
+hi User1 ctermbg=4 ctermfg=232 guibg=#007acc guifg=#000000 "cterm=bold gui=bold
+hi User2 ctermbg=4 ctermfg=232 guibg=#007acc guifg=#000000 cterm=bold gui=bold
+
+"set statusline+=%#NormalColor#%{(mode()=='n')?'\ \ Normal\ ':''}
+"set statusline+=%#InsertColor#%{(mode()=='i')?'\ \ Insert\ ':''}
+"set statusline+=%#ReplaceColor#%{(mode()=='R')?'\ \ Replace\ ':''}
+"set statusline+=%#VisualColor#%{(mode()=='v')?'\ \ Visual\ ':''}
+"set statusline+=%#VisualColor#%{(mode()=='V')?'\ \ V-Line\ ':''}
+"set statusline+=%#VisualColor#%{(mode()=='CTRL-v')?'\ \ V-Block\ ':''}
+
+"" current config section {{{
+set laststatus=2                                           " show status line
+set statusline=                                            " status line config
+set statusline+=%2*\ %{toupper(g:currentmode[mode()])}\    " The current mode
+set statusline+=\»\                                        " blank space
+set statusline+=%1*\ %<%F\                                 " Full path
+set statusline+=%1*\ %m                                    " blank space
+set statusline+=%1*\ %r                                    " blank space
+set statusline+=%=                                         " Switch to the right side
+set statusline+=%1*\ %c                                    " cursor current position
+set statusline+=%1*\ \|\                                   " blank space
+set statusline+=%1*%l\/%L\                                 " blank space
+set statusline+=%1*\|                                      " blank space
+set statusline+=%1*\ \-%Y\-\                               " file type
+set statusline+=%2*\ \«                                    " blank space
+set statusline+=\                                          " blank space
+set statusline+=\(%{StatuslineGitBranch()}\)               " git brunch in current directory
+set statusline+=\                                          " blank space
+"" }}}

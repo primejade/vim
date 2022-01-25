@@ -5,45 +5,36 @@
  |_||_|___|   P
 
 ..
-
 \" Page appearance (font, size and width) {{{
-\".ds FAM Sans\" font family
-.nr PS 12\" font size
-\".nr PO 3c\" page width (effects on next page)
+.ds FAM Serif\" Font family
+.nr PS 15\" Font size
+.nr PO 2.8c\" Page width (effects on next page)
+.nr VS 15p\" Line spacing
 \" }}}
 \" Page header and footer {{{
-.ds RH ThePrimeJade\" author name on top-left
-.ds LH Shell scripting\" title on top-center
+.ds RH Author\" author name on top-left
+.ds LH Title\" title on top-center
 .ds CF \*(DY\" current date on top-right
 \" }}}
-
 \" First Page {{{
 .TL
-.LG
-.LG
 Title
 
 .AU
-.LG
 Author
 
 .AI
-.LG
 Institution
 
 .AB no
 This is the Abstract Section.
 .AE
 \" }}}
-.bp
 \" beginning {{{
 .SH
-.LG
 Header.
 
 .LP
-.LG
 Paragraph.
 
 \" }}}
-

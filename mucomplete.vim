@@ -1,0 +1,5 @@
+set completeopt+=menuone
+set shortmess+=c                        " no showing matchs
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#completion_delay = 1
+
