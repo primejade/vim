@@ -155,7 +155,12 @@ I do not use a plugin for this. It's all just vim's built-in status line.
 
 ### Other files:
 
-latex-live-preview.vim, minisnip.vim, mucomplete.vim, omnifunc.vim
+**Plugin configs:**
+
+1. latex-live-preview.vim
+1. minisnip.vim
+1. mucomplete.vim
+1. omnifunc.vim
 
 - `latex-live-preview.vim`
     - set `zathura` as viewer
