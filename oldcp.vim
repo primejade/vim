@@ -40,8 +40,8 @@ autocmd Filetype nroff nnoremap <leader>fe :!groff -ms -Tpdf %:r.ms > %:r.pdf<CR
 " markdown section {{{
 "" markdown to pdf via pandoc
 "autocmd Filetype markdown nnoremap <leader>fe :!pandoc %:r.md -o %:r.pdf<CR>
-autocmd Filetype markdown nnoremap <leader>fe :!glow -p %<CR>
-autocmd Filetype markdown nnoremap <leader>fw :!mdp %<CR>
+autocmd Filetype markdown,vimwiki nnoremap <leader>fe :!glow -p %<CR>
+autocmd Filetype markdown,vimwiki nnoremap <leader>fw :!mdp %<CR>
 " }}}
 " sent section {{{
 "" markdown to pdf via pandoc
