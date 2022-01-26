@@ -4,12 +4,13 @@
 " |_||_|___|   P
 "               
 " auto complete {{{
+let g:AFillOn=0
 function! ToggleAutoFill()
     if !g:AFillOn
         call AutoFill()
         echo "AutoFill macro activated."
     else
-        cal AutoFillOff()
+        call AutoFillOff()
         echo "AutoFill macro deactivated."
     endif
 endfunction
@@ -35,9 +36,10 @@ function! AutoFillOff()
 endfunction
 "
 nmap <space><space>a :call ToggleAutoFill()<CR>
+"
 au FileType c,cpp,sh,python,lua,markdown,latex,vim,csh
       \ call AutoFill()
-
+"
 " Markdown complete
 function! MDownFill()
 "    echo "MDownFill macro activated."
