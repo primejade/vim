@@ -34,6 +34,7 @@ function! AutoFillOff()
     iu {
 endfunction
 "
+nmap <space><space>a :call ToggleAutoFill()<CR>
 au FileType c,cpp,sh,python,lua,markdown,latex,vim,csh
       \ call AutoFill()
 
@@ -53,7 +54,7 @@ function! MDownFillOff()
 endfunction
 "
 au FileType markdown call MDownFill()
-au FileType html,xml inoremap <  <><Left>
+"au FileType html,xml inoremap <  <><Left>
 " }}}
 " vim-plug {{{
 call plug#begin('~/.vim/plugged/')
