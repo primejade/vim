@@ -5,23 +5,21 @@
 "                
 "                
 "" add ready-to-use text by .ext
+let g:skname=','
 "
-nnoremap ,make :-1read ~/.vim/templates/skel.mk<CR>G
-nnoremap ,sh   :-1read ~/.vim/templates/skel.sh<CR>G
-nnoremap ,py   :-1read ~/.vim/templates/skel.py<CR>G
-nnoremap ,lua  :-1read ~/.vim/templates/skel.lua<CR>G
+exe "nnoremap" .. g:skname .. "make :-1read ~/.vim/templates/skel.mk<CR>G"
+exe "nnoremap" .. g:skname .. "sh   :-1read ~/.vim/templates/skel.sh<CR>G"
+exe "nnoremap" .. g:skname .. "py   :-1read ~/.vim/templates/skel.py<CR>G"
+exe "nnoremap" .. g:skname .. "lua  :-1read ~/.vim/templates/skel.lua<CR>G"
 "
-nnoremap ,html :-1read ~/.vim/templates/skel.html<CR>8j3w
-nnoremap ,md   :-1read ~/.vim/templates/skel.md<CR>G
-nnoremap ,ms   :-1read ~/.vim/templates/skel.ms<CR>G
+exe "nnoremap" .. g:skname .. "html :-1read ~/.vim/templates/skel.html<CR>8j3w"
+exe "nnoremap" .. g:skname .. "md   :-1read ~/.vim/templates/skel.md<CR>G"
+exe "nnoremap" .. g:skname .. "ms   :-1read ~/.vim/templates/skel.ms<CR>G"
 "
-nnoremap ,tex   :-1read ~/.vim/templates/skel.tex<CR>:155<CR>
-"nnoremap ,ptx  :-1read ~/.vim/templates/skel.p.tex<CR>
-"nnoremap ,btx  :-1read ~/.vim/templates/skel.beamer.tex<CR>
-"nnoremap ,bbtx :-1read ~/.vim/templates/skel.beaper.tex<CR>
+exe "nnoremap" .. g:skname .. "tex  :-1read ~/.vim/templates/skel.tex<CR>:155<CR>"
 "
-nnoremap ,C    :-1read ~/.vim/templates/skel.c<CR>
-nnoremap ,cpp  :-1read ~/.vim/templates/skel.cpp<CR>
+exe "nnoremap" .. g:skname .. "C    :-1read ~/.vim/templates/skel.c<CR>"
+exe "nnoremap" .. g:skname .. "cpp  :-1read ~/.vim/templates/skel.cpp<CR>"
 "               
-"nnoremap ,int  :-1read ~/.vim/templates/skel.intro<CR>
+"exe "nnoremap" .. g:skname .. "int  :-1read ~/.vim/templates/skel.intro<CR>"
 "               
