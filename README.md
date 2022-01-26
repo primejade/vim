@@ -3,7 +3,7 @@
 My vim configuration
 
 Vim will have separate colorschemes and configurations
-in GUI, Terminal and tty.
+in GUI, Terminal and tty in this setup.
 
 - Terminal
     - colorscheme: hybrid [dark]
@@ -32,8 +32,21 @@ Let me explain a little bit :)
 ## Files
 
 I have all of my configurations in separate files.
-In each file, I have some kind of settings, one for keybindings, another for
+One file for keybindings, another for
 statusline configs and so on.
+In each file, I have some kind of settings.
+
+### vimrc:
+
+This is the init file which `vim` reads settings from this.
+And I source all my config files in it.
+Also there is a section, just an `if` statement to say:
+
+> if vim opened in a tty, set this colorscheme and do this
+
+> if vim opened inside of a Terminal, do these and use this colorscheme
+
+> and if vim opened in a GUI mode [gvim typically] use this font, and this colorscheme
 
 ### main.vim:
 
@@ -47,14 +60,18 @@ This file contains some of basic settings like
 
 ### abreviation.vim:
 
-This is the fun part. I have three functions in this file
-for mapping some ascii characters
-to some other characters like `•`, `→`, `⇒`, etc.. :)
+This is the fun part. I have three functions in this file.
+
+All these three functions do is
+mapping some ascii characters like `•`, `→`, `⇒`
+to some common symbols like `.`, `->`, `=>`
+and let us to toggle [for enable and disable these maps]
+between two functions.
 
 One function to activate, one for deactivate,
 and one for toggle between those two functions.
 
-The keybinding is `<space><space>c` in normal mode.
+The keybinding for toggling is `<space><space>c` in normal mode.
 
 ### keybinds.vim:
 
@@ -69,7 +86,7 @@ Thinks like:
 
 I'm used to have `\` as leader key.
 You can set `mapleader` to something else like `,`.
-`keybinds.vim` file, line 8.
+See `keybinds.vim` file, line 8.
 
 ```vim
 "" <Leader> key section
@@ -79,21 +96,21 @@ let mapleader='\'      " change the <Leader> Key
 ### skels.vim:
 
 If you want to set the leader key [or anything] to `,`
-note that I have `,` set to get some template files located in
-`$HOME/.vim/templates/` directory.
+note that I have `,` set to read some template files located in
+`$HOME/.vim/templates/` directory to the current file.
 
-Take a look at `skels.vim` file, line 8, `g:skname` variable,
-for changing the `,` behavior.
+Take a look at `skels.vim` file, line 8, `g:skelkey` variable,
+for changing the `g:skelkey` which I it set to `,` by default.
 
 ```vim
 "" add ready-to-use text by .ext
-let g:skname=','
+let g:skelkey=','
 ```
 
 ### extra.vim:
 
 This file, as you guess from it's name,
-have some extra settings and features enables [or implemented].
+have some extra settings and features enabled.
 Things like:
 
 - Auto fill `{ } [ ] ( )`
