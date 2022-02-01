@@ -3,7 +3,7 @@
 "  | __ | _|    A
 "  |_||_|___|   P
 "                
-"" Git Function: {{{
+" Git Function: {{{
 function! StatuslineGitBranch()
     if exists("g:git_branch")
         return g:git_branch
@@ -19,12 +19,12 @@ function! GetGitBranch()
 endfunction
 
 autocmd BufEnter * call GetGitBranch()
-"" }}}
-"" Color: {{{
-hi User1 ctermfg=015 ctermbg=235 guifg=#f1f1f1 guibg=#121212 cterm=bold gui=bold 
-"hi User1 ctermbg=015 ctermfg=235 guibg=#f1f1f1 guifg=#121212 cterm=bold gui=bold  "
-"" }}}
-"" Status Line: {{{
+" }}}
+" Color: {{{
+"hi User1 ctermfg=015 ctermbg=235 guifg=#f1f1f1 guibg=#121212 cterm=bold gui=bold 
+hi User1 ctermbg=015 ctermfg=235 guibg=#f1f1f1 guifg=#121212 cterm=bold gui=bold  "
+" }}}
+" Status Line: {{{
 set laststatus=2                  " show status line
 set statusline=                   " status line config
 set statusline+=%1*\              " set color, blank space
@@ -40,4 +40,4 @@ set statusline+=\ \ \ \ \ \       " blank space
 set statusline+=\(%{StatuslineGitBranch()}\)  " git brunch in current directory
 set statusline+=\ \ \ \ \ \       " blank space
 set statusline+=%P\ "
-"" }}}
+" }}}
