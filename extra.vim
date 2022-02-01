@@ -62,8 +62,10 @@ au FileType markdown call MDownFill()
 call plug#begin('~/.vim/plugged/')
   Plug 'Jorengarenar/miniSnip'
   Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-  Plug 'vimwiki/vimwiki'
   Plug 'lifepillar/vim-mucomplete'
+  Plug 'tpope/vim-markdown'
+  Plug 'vim-scripts/fountain.vim'
+  Plug 'tribela/vim-transparent'
 call plug#end()
 "  Plug 'ap/vim-css-color'               " Color previews for CSS
 "  Plug 'vim-scripts/AutoComplPop'       " auto completion plugin
@@ -72,7 +74,6 @@ call plug#end()
 "  Plug 'arcticicestudio/nord-vim'
 "  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-"  Plug 'tribela/vim-transparent'
 "  Plug 'mcchrish/nnn.vim'
 "
 " }}}
