@@ -87,8 +87,13 @@ source ~/.vim/Note.vim
 "" scpecial characters
 source ~/.vim/abreviation.vim
 "
-"" LaTeX Live Preview
-so ~/.vim/latex-live-preview.vim
+"" LaTeX Live Preview:
+au FileType tex,plaintex
+  \ so ~/.vim/latex-live-preview.vim
+"
+"" Markdown Preview:
+au FileType markdown
+  \ so ~/.vim/markdown-preview.vim
 "
 "" define sent filetype
 au FileType sent source ~/.vim/sent.vim
